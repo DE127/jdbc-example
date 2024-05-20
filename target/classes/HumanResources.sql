@@ -61,3 +61,5 @@ INSERT INTO Salary (employee_id, salary_amount, start_date) VALUES
     (1, 80000.00, '2020-01-10'),
     (2, 60000.00, '2019-03-05'),
     (3, 70000.00, '2021-02-20');
+    
+    123
