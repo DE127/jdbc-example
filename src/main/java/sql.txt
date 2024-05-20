@@ -1,0 +1,154 @@
+INSERT: Chèn một bản ghi mới vào bảng Departments.
+sql
+Copy code
+INSERT INTO Departments (department_name)
+VALUES ('Human Resources');
+Bạn có thể chèn nhiều bản ghi bằng cách sử dụng nhiều giá trị trong câu lệnh VALUES:
+
+sql
+Copy code
+INSERT INTO Departments (department_name)
+VALUES ('Finance'), ('Marketing'), ('IT');
+UPDATE: Cập nhật tên của một phòng ban dựa trên department_id.
+sql
+Copy code
+UPDATE Departments
+SET department_name = 'Human Resources and Administration'
+WHERE department_id = 1;
+Bạn cũng có thể cập nhật dựa trên department_name nếu cần:
+
+sql
+Copy code
+UPDATE Departments
+SET department_name = 'HR'
+WHERE department_name = 'Human Resources';
+DELETE: Xóa một bản ghi khỏi bảng Departments dựa trên department_id.
+sql
+Copy code
+DELETE FROM Departments
+WHERE department_id = 1;
+Hoặc xóa dựa trên department_name:
+
+sql
+Copy code
+DELETE FROM Departments
+WHERE department_name = 'Marketing';
+
+
+
+INSERT: Chèn một bản ghi mới vào bảng Positions.
+sql
+Copy code
+INSERT INTO Positions (position_name)
+VALUES ('Manager');
+Bạn có thể chèn nhiều bản ghi bằng cách sử dụng nhiều giá trị trong câu lệnh VALUES:
+
+sql
+Copy code
+INSERT INTO Positions (position_name)
+VALUES ('Developer'), ('Designer'), ('Analyst');
+UPDATE: Cập nhật tên của một vị trí dựa trên position_id.
+sql
+Copy code
+UPDATE Positions
+SET position_name = 'Senior Manager'
+WHERE position_id = 1;
+Bạn cũng có thể cập nhật dựa trên position_name nếu cần:
+
+sql
+Copy code
+UPDATE Positions
+SET position_name = 'Lead Developer'
+WHERE position_name = 'Developer';
+DELETE: Xóa một bản ghi khỏi bảng Positions dựa trên position_id.
+sql
+Copy code
+DELETE FROM Positions
+WHERE position_id = 1;
+Hoặc xóa dựa trên position_name:
+
+sql
+Copy code
+DELETE FROM Positions
+WHERE position_name = 'Designer';
+
+
+
+
+
+Bảng Employees
+INSERT: Chèn một bản ghi mới vào bảng Employees.
+sql
+Copy code
+INSERT INTO Employees (first_name, last_name, date_of_birth, hire_date, department_id, position_id)
+VALUES ('John', 'Doe', '1980-01-01', '2023-05-01', 1, 1);
+Bạn có thể chèn nhiều bản ghi bằng cách sử dụng nhiều giá trị trong câu lệnh VALUES:
+
+sql
+Copy code
+INSERT INTO Employees (first_name, last_name, date_of_birth, hire_date, department_id, position_id)
+VALUES 
+('Jane', 'Smith', '1990-02-02', '2023-05-02', 2, 2),
+('Alice', 'Johnson', '1985-03-03', '2023-05-03', 3, 3);
+UPDATE: Cập nhật thông tin của một nhân viên dựa trên employee_id.
+sql
+Copy code
+UPDATE Employees
+SET first_name = 'Johnathan', last_name = 'Doe Jr.', department_id = 2
+WHERE employee_id = 1;
+Bạn cũng có thể cập nhật thông tin khác dựa trên các điều kiện khác:
+
+sql
+Copy code
+UPDATE Employees
+SET position_id = 3
+WHERE last_name = 'Smith';
+DELETE: Xóa một bản ghi khỏi bảng Employees dựa trên employee_id.
+sql
+Copy code
+DELETE FROM Employees
+WHERE employee_id = 1;
+Hoặc xóa dựa trên một điều kiện khác:
+
+sql
+Copy code
+DELETE FROM Employees
+WHERE last_name = 'Johnson';
+Bảng Salary
+INSERT: Chèn một bản ghi mới vào bảng Salary.
+sql
+Copy code
+INSERT INTO Salary (employee_id, salary_amount, start_date)
+VALUES (1, 50000.00, '2023-05-01');
+Bạn có thể chèn nhiều bản ghi bằng cách sử dụng nhiều giá trị trong câu lệnh VALUES:
+
+sql
+Copy code
+INSERT INTO Salary (employee_id, salary_amount, start_date)
+VALUES 
+(2, 60000.00, '2023-05-02'),
+(3, 55000.00, '2023-05-03');
+UPDATE: Cập nhật mức lương của một nhân viên dựa trên salary_id.
+sql
+Copy code
+UPDATE Salary
+SET salary_amount = 52000.00
+WHERE salary_id = 1;
+Bạn cũng có thể cập nhật mức lương dựa trên employee_id:
+
+sql
+Copy code
+UPDATE Salary
+SET salary_amount = 62000.00
+WHERE employee_id = 2;
+DELETE: Xóa một bản ghi khỏi bảng Salary dựa trên salary_id.
+sql
+Copy code
+DELETE FROM Salary
+WHERE salary_id = 1;
+Hoặc xóa dựa trên employee_id:
+
+sql
+Copy code
+DELETE FROM Salary
+WHERE employee_id = 3;
