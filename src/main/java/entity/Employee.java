@@ -31,6 +31,33 @@ public class Employee {
 		this.position_name = position_name;
 		this.salary_amount = salary_amount;
 	}
+	
+	public Employee(String first_name, String last_name, String date_of_birth, String hire_date, int department_id,
+			int position_id, Double salary_amount) {
+		super();
+		this.first_name = first_name;
+		this.last_name = last_name;
+		this.date_of_birth = date_of_birth;
+		this.hire_date = hire_date;
+		this.department_id = department_id;
+		this.position_id = position_id;
+		this.salary_amount = salary_amount;
+	}
+	
+	
+
+	public Employee(int employee_id, String first_name, String last_name, String date_of_birth, String hire_date,
+			int department_id, int position_id, Double salary_amount) {
+		super();
+		this.employee_id = employee_id;
+		this.first_name = first_name;
+		this.last_name = last_name;
+		this.date_of_birth = date_of_birth;
+		this.hire_date = hire_date;
+		this.department_id = department_id;
+		this.position_id = position_id;
+		this.salary_amount = salary_amount;
+	}
 
 	public int getEmployee_id() {
 		return employee_id;
