@@ -32,10 +32,6 @@ public class EmployeeController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		request.setAttribute("title", "List Employee");
-
-		// Mở kết nối tới csdl >>> load data
 		IEmployeeDAO epDAO = new ImplEmployeeDAO();
 		List<Employee> lst = epDAO.select();
 
