@@ -7,6 +7,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.IEmployeeDAO;
+import dao.ImplEmployeeDAO;
+import entity.Employee;
+
 /**
  * Servlet implementation class EmployeeDetailController
  */
@@ -26,8 +30,22 @@ public class EmployeeDetailController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		// Get employee id from request
+		String employeeId = request.getParameter("id-detail");
+		int id = Integer.parseInt(employeeId);
+		
+		// Get employee from the database
+		IEmployeeDAO empDAO = new ImplEmployeeDAO();
+		
+		// Check if the employee exists
+		if (empDAO.getEmployeeById(id) != null && employeeId != null && !employeeId.isEmpty()) {
+			Employee emp = empDAO.getEmployeeById(id);
+			request.setAttribute("emp", emp);
+			request.getRequestDispatcher("employee-detail.jsp").forward(request, response);
+		} else {
+			response.sendRedirect("employee-list");
+		}
 	}
 
 	/**
